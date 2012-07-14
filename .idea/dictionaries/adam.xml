@@ -7,6 +7,7 @@
       <w>latedef</w>
       <w>newcap</w>
       <w>noarg</w>
+      <w>nodeunit</w>
       <w>noempty</w>
       <w>nonew</w>
       <w>undef</w>

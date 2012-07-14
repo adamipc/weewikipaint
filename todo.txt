@@ -18,3 +18,4 @@ Engineering Tasks:
 - client-side testing
 
 To Do on current task:
+- Add LICENSE.txt

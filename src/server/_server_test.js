@@ -2,6 +2,6 @@
 "use strict";
 
 exports.testNothing = function(test) {
-    test.ok(false, "Hello");
+    test.ok(true, "Hello");
     test.done();
 };

@@ -19,8 +19,8 @@
     desc("Test everything.");
     task("test", [], function() {
         var reporter = require("nodeunit").reporters["default"];
-        var passed = reporter.run(['src/server/_server_test.js'], null, function() {
-            console.log("tests done");
+        var passed = reporter.run(['src/server/_server_test.js'], null, function(failures) {
+            if (failures) fail("Tests failed");
             complete();
         });
     }, {async: true});

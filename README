@@ -6,5 +6,6 @@ To build on Windows:
 - Clone repository
 
 To build:
+- Install Node.js [v0.8.6]
 - Assumes presence of Node.js
 - Run ./jake.sh to build

@@ -14,7 +14,7 @@ exports.tearDown = function(done) {
 // TODO: test-drive stop() callback
 
 exports.test_serverReturnsHelloWorld = function(test) {
-    server.start(); // TODO: remove duplication?
+    server.start();
     http.get("http://localhost:8080", function(response) {
         var receivedData = false;
 

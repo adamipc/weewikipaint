@@ -4,9 +4,9 @@
 var server = require("./server.js");
 var http = require("http");
 
-exports.tearDown = function(test) {
+exports.tearDown = function(done) {
     server.stop(function() {
-        console.log("stop callback");
+        done();
     });
 };
 

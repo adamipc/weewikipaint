@@ -40,10 +40,15 @@
 
     //    desc("Ensure correct version of Node is present");
     task("node", [], function() {
-        var desiredNodeVersion = "v0.8.6\n";
-        // `node --version`
-        console.log("Node stuff here");
-        var command = "node --version";
+        var NODE_VERSION = "v0.8.6\n";
+
+        sh("node --version", function(stdout) {
+            if (stdout !== NODE_VERSION) fail("Incorrect node version. Expected" + NODE_VERSION);
+            complete();
+        });
+    }, {async: true});
+
+    function sh(command, callback) {
         console.log("> " + command);
 
         var stdout = "";
@@ -52,13 +57,11 @@
              stdout += chunk;
         });
         process.on("cmdEnd", function() {
-            if (stdout !== desiredNodeVersion) fail("Incorrect node version. Expected " + desiredNodeVersion);
-            console.log("Stdout: " + stdout);
-            complete();
+            console.log();
+            callback(stdout);
         });
         process.run();
-
-    }, {async: true});
+    }
 
     function nodeLintOptions() {
         return {

@@ -8,14 +8,12 @@ Minimum Marketable Feature:
 - more collaborative features?
 
 User Stories:
-* Serve a one-file homepage
-- Server 404 errors for everything else
+* Server 404 errors for everything else
+- Do we want a custom 404?
 - Marketing copy
 - Deploy
 
 Engineering Tasks:
-* Spike serving a file
-- TDD file serving
 - design work?
 
 To Do on current task:

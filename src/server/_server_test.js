@@ -27,12 +27,16 @@ exports.test_serverReturnsHelloWorld = function(test) {
 
 exports.test_serverServesAFile = function(test) {
     var testDir = "generated/test";
-    var filename = testDir + "/test.html";
+    var testFile = testDir + "/test.html";
 
-    fs.writeFileSync(filename, "Hello world");
-
-    // TODO
-    test.done();
+    try {
+        fs.writeFileSync(testFile, "Hello world");
+        test.done();
+    }
+    finally {
+        fs.unlinkSync(testFile);
+        test.ok(!fs.existsSync(testFile), "file missing");
+    }
 };
 
 exports.test_serverRequiresPortNumber = function(test) {

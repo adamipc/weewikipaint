@@ -17,7 +17,6 @@ Engineering Tasks:
 * Serve a file
 
 To Do on current task:
-- Integrate
 
 Future ideas:
 - Create 'fail fast' assertion code

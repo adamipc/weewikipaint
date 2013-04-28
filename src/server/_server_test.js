@@ -24,6 +24,11 @@ exports.test_serverReturnsHelloWorld = function(test) {
     });
 };
 
+exports.test_serverServesAFile = function(test) {
+    // TODO
+    test.done();
+};
+
 exports.test_serverRequiresPortNumber = function(test) {
     test.throws(function() {
         server.start();

@@ -8,21 +8,19 @@ Minimum Marketable Feature:
 - more collaborative features?
 
 User Stories:
-* Server 404 errors for everything else
-- Do we want a custom 404?
+* Do we want a custom 404?
 - Marketing copy
-- Deploy
+- Publish to Internet
 
 Engineering Tasks:
-- design work?
 
 To Do on current task:
--
 
 Future ideas:
 - Create 'fail fast' assertion code
 - Abstract test framework? (Swap out a different framework to make sure abstraction works)
 - Static checking of function parameters (rather than writing tests)
+- Handle errors properly in server.js
 
 Notes:
 - NodeUnit doesn't work properly on windows, it seems...

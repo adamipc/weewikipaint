@@ -20,17 +20,21 @@
     task("lint", ["nodeVersion"], function() {
         var lint = require("./build/lint/lint_runner.js");
 
-        var files = new jake.FileList();
-        files.include("**/*.js");
-        files.exclude("node_modules");
-        var passed = lint.validateFileList(files.toArray(), nodeLintOptions(), {});
+        var javascriptFiles = new jake.FileList();
+        javascriptFiles.include("**/*.js");
+        javascriptFiles.exclude("node_modules");
+        var passed = lint.validateFileList(javascriptFiles.toArray(), nodeLintOptions(), {});
         if (!passed) fail("Lint failed");
     });
 
     desc("Test everything.");
     task("test", ["nodeVersion", TEMP_TESTFILE_DIR], function() {
+        var testFiles = new jake.FileList();
+        testFiles.include("**/_*_test.js");
+        testFiles.exclude("node_modules");
+
         var reporter = require("nodeunit").reporters["default"];
-        var passed = reporter.run(['src/server/_server_test.js'], null, function(failures) {
+        var passed = reporter.run(testFiles.toArray(), null, function(failures) {
             if (failures) fail("Tests failed");
             complete();
         });
